@@ -14,6 +14,10 @@ conway_generator.py   →  generates Conway DSL workflow JSON from docs, sites, 
 - [Background](#background)
 - [The Two-Script Workflow](#the-two-script-workflow)
 - [Installation](#installation)
+- [Prompts](#prompts)
+  - [Prompt to Tech Bro](#prompt-to-bro)
+  - [BRO MAX MODE](#bro-max)
+  - [Mega Prompt](#mega-prompt)  
 - [bro\_generator.py — Platform Preparation](#bro_generatorpy--platform-preparation)
   - [How It Works](#how-it-works)
   - [web-to-bro](#web-to-bro)
@@ -42,6 +46,10 @@ For Tech Bro to work optimally on a platform, two things need to exist:
 1. **Structured pages** on the platform that aggregate the user's data (`bro_read`) and surface their available actions (`bro_write`) in one place, rather than spread across dozens of screens.
 2. **Workflow files** that tell Tech Bro exactly what steps to take to accomplish a task — navigate here, fill this form, click that button, wait for a human when authentication is needed. You can generate them in tech bro, but it is nicer to have a script turn all your exisiting documentation into automation.
 
+This repository provides two implementation strategies.  A prompt based approach for AI enabled engineers and a script based approach for envrionments where Claude Code, Codex, or other modern tools are not yet widly adopted.
+Prompts:
+`prompt to tech bro.md` `BRO MAX MODE.md` `Mega prompt.md`
+Scripts:
 `bro_generator.py` handles #1. `conway_generator.py` handles #2.
 
 ---
@@ -94,7 +102,16 @@ export ANTHROPIC_API_KEY=sk-ant-...
 ```
 
 ---
+## Prompts
 
+### Prompt to Bro
+Prompt to tech bro.md contains a step by step document with clearly explained copy pastable prompts. Highly recomended for first time users.
+### BRO MAX
+BRO MAX MODE.md is meant to be copied and pasted to an agent with PR creation autonomy.  Third time is the charm! Copy Paste the entire thing for agents with enough autonomy to open a PR.
+### Mega Prompt
+Mega Prompt.md contains a series of prompts organized for quicky copy-paste than promp to tech bro for systems where humans are required to open PRs.
+
+---
 ## bro\_generator.py — Platform Preparation
 
 ### How It Works
